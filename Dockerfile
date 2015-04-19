@@ -20,10 +20,8 @@ RUN apt-get clean \
     && rm -rf /tmp/* \
     && rm -rf /var/tmp/*
 
-VOLUME /config
-VOLUME /data
+VOLUME /config /downloads
 
-EXPOSE 8080
-EXPOSE 9090
+EXPOSE 8080 9090
 
 CMD [ "/usr/bin/sabnzbdplus", "--config-file", "/config", "--server", "0.0.0.0:8080" ]
